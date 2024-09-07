@@ -27,8 +27,8 @@ class regression(object) :
         y_pred = X.dot(self.w)
         return y_pred
     
-class linear_regression() :
-    
+class normal_equation() :
+
     def fit(self, X, y):
             
         # Insert constant ones for bias weights
