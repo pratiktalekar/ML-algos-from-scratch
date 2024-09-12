@@ -1,4 +1,11 @@
 import numpy as np
+
+class l2_regularization() :
+    def __init__(self, alpha):
+        self.alpha = alpha
+    
+    
+        
 class regression(object) :
 
     def __init__(self, n_iterations, learning_rate) :
@@ -38,3 +45,22 @@ class normal_equation() :
         S = np.diag(S)
         X_sq_reg_inv = V.dot(np.linalg.pinv(S)).dot(U.T)
         self.w = X_sq_reg_inv.dot(X.T).dot(y)
+
+    def predict1(self, X, y) :
+        X = np.insert(X, 0, 1, axis=1)
+        y_pred = X.dot(self.w)
+        return y_pred
+    
+
+    
+
+
+
+
+
+'''
+1. np.insert(arr, obj, values, axis) 
+    arr is in which we have to insert the values, obj is index before which we have to insert values
+    values is what we have to insert in arr , it can be any integer, sequence of integers.
+    axis is used in case of 2-d array , it is used to insert values columnwise(axis=1) or rowwise(axis=0)
+'''
