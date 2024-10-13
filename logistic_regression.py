@@ -10,7 +10,7 @@ class logistic_regression() :
         return 1/(1+ np.exp(-x))
 
     def fit(self, X, y) :
-        n_samples, n_features = np.shape
+        n_samples, n_features = X.shape
         self.weights = np.zeros(n_features)
         self.bias = bias
 
